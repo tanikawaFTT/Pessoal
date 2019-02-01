@@ -19,7 +19,7 @@ dataset = pd.read_csv('Data.csv')
 #definning features and independent variables
 x = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 3].values
-x1 = dataset.iloc[:, :-1].values
+#x1 = dataset.iloc[:, :-1].values
 
 #dealing with missing data and using sklearn
 from sklearn.preprocessing import Imputer
@@ -40,7 +40,7 @@ x[:, 0] = labelencoder_x.fit_transform(x[:, 0])
 
 onehotencoder = OneHotEncoder(categorical_features = [0]) 
 x = onehotencoder.fit_transform(x).toarray()
-x1 = onehotencoder.fit_transform(x).toarray() #testes criando dummy diretamente
+#x1 = onehotencoder.fit_transform(x).toarray() #testes criando dummy diretamente
 
 #Adjusting the target variable
 labelencoder_y = LabelEncoder()
